@@ -3,8 +3,8 @@ import Sorter from '../components/Sorter';
 
 const BubbleSort = () => {
   return (
-    <section>
-      <h1 className='text-center text-5xl mt-5'>Bubble Sort</h1>
+    <section className='m-4'>
+      <h1 className='text-center text-5xl'>Bubble Sort</h1>
       <Sorter />
       <article>
         <p>
