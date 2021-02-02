@@ -38,6 +38,23 @@ const Sorter = () => {
     return arr;
   };
 
+  const bubbleSort = (arr) => {
+    const len = arr.length;
+    let swapped;
+    do {
+      swapped = false;
+      for (let i = 0; i < len; i++) {
+        if (arr[i] > arr[i + 1]) {
+          const tmp = arr[i];
+          arr[i] = arr[i + 1];
+          arr[i + 1] = tmp;
+          swapped = true;
+        }
+      }
+    } while (swapped);
+    return arr;
+  };
+
   const updateArray = (e) => {
     setArraySize(e.target.value);
   };
@@ -46,11 +63,19 @@ const Sorter = () => {
     setSpeed(e.target.value);
   };
 
+  const onClickSort = () => {
+    setSorterArray([...bubbleSort(sorterArray)]);
+  };
+
   return (
     <div className='my-5'>
-      <div>sdfdf</div>
+      <div></div>
+      <div>{sorterArray.map((i) => i + ',')}</div>
       <div className='flex flex-wrap justify-center space-x-2'>
-        <button className='bg-blue-600 text-gray-200 rounded hover:bg-blue-500 px-4 mb-2 py-1 focus:outline-none'>
+        <button
+          className='bg-blue-600 text-gray-200 rounded hover:bg-blue-500 px-4 mb-2 py-1 focus:outline-none'
+          onClick={onClickSort}
+        >
           Sort
         </button>
         <button className='bg-blue-600 text-gray-200 rounded hover:bg-blue-500 px-4 mb-2 py-1 focus:outline-none'>
@@ -61,12 +86,12 @@ const Sorter = () => {
         </button>
         <button
           className='bg-blue-600 text-gray-200 rounded hover:bg-blue-500 px-4 mb-2 py-1 focus:outline-none'
-          onClick={() => setSorterArray(shuffleArray(sorterArray))}
+          onClick={() => setSorterArray([...shuffleArray(sorterArray)])}
         >
           Randomize
         </button>
         <div className='flex items-center space-x-1 mb-2'>
-          <p>Array Size</p>
+          <p>Array Size: {arraySize}</p>
           <input
             type='range'
             min={20}
@@ -74,9 +99,8 @@ const Sorter = () => {
             value={arraySize}
             onChange={updateArray}
           />
-          <p>{arraySize}</p>
         </div>
-        <div className='flex items-center space-x-1'>
+        <div className='flex items-center space-x-1 mb-2'>
           <p>Speed</p>
           <input
             type='range'
