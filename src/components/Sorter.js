@@ -1,76 +1,76 @@
 import { React, useState, useEffect } from 'react';
+import Bar from './Bar';
+import bubbleSort from '../algorithms/bubbleSort';
 
 const Sorter = () => {
-  const [arraySize, setArraySize] = useState(20);
+  const [arraySize, setArraySize] = useState(30);
   const [speed, setSpeed] = useState(5);
   const [sorterArray, setSorterArray] = useState([]);
 
   useEffect(() => {
     const arr = [];
-    for (let x = 1; x <= 20; x++) {
-      arr.push(x);
+    for (let x = 1; x <= 30; x++) {
+      arr.push({
+        index: x - 1,
+        color: null,
+        value: Math.round(Math.random() * (30 - 1) + 1),
+      });
     }
-    setSorterArray(shuffleArray(arr));
+    setSorterArray(...[arr]);
   }, []);
 
   useEffect(() => {
-    const arr = [];
-    for (let x = 1; x <= arraySize; x++) {
-      arr.push(x);
-    }
-    setSorterArray(shuffleArray(arr));
+    randomize(arraySize);
   }, [arraySize]);
 
-  const shuffleArray = (arr) => {
-    let currentIndex = arr.length,
-      temporaryValue,
-      randomIndex;
-    // While there remain elements to shuffle...
-    while (0 !== currentIndex) {
-      // Pick a remaining element...
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex -= 1;
-      // And swap it with the current element.
-      temporaryValue = arr[currentIndex];
-      arr[currentIndex] = arr[randomIndex];
-      arr[randomIndex] = temporaryValue;
+  const randomize = (arraySize) => {
+    const arr = [];
+    for (let x = 1; x <= arraySize; x++) {
+      arr.push({
+        index: x - 1,
+        color: null,
+        value: Math.round(Math.random() * (arraySize - 1) + 1),
+      });
     }
-    return arr;
+    setSorterArray(...[arr]);
   };
 
-  const bubbleSort = (arr) => {
-    const len = arr.length;
-    let swapped;
-    do {
-      swapped = false;
-      for (let i = 0; i < len; i++) {
-        if (arr[i] > arr[i + 1]) {
-          const tmp = arr[i];
-          arr[i] = arr[i + 1];
-          arr[i + 1] = tmp;
-          swapped = true;
-        }
-      }
-    } while (swapped);
-    return arr;
-  };
-
-  const updateArray = (e) => {
-    setArraySize(e.target.value);
-  };
-
-  const updateSpeed = (e) => {
-    setSpeed(e.target.value);
+  const interpreteChanges = (changeList) => {
+    const len = changeList.length;
+    console.log(len);
+    for (let x = 0; x < len; x++) {
+      setTimeout(() => {
+        const newState = sorterArray;
+        newState[changeList[x].index] = changeList[x];
+        setSorterArray(...[newState]);
+        console.log(changeList[x]);
+      }, speed * 500 * x);
+    }
   };
 
   const onClickSort = () => {
-    setSorterArray([...bubbleSort(sorterArray)]);
+    const arr = [];
+    for (let i of sorterArray) {
+      arr.push(i.value);
+    }
+    interpreteChanges(bubbleSort(arr));
   };
 
   return (
     <div className='my-5'>
-      <div></div>
-      <div>{sorterArray.map((i) => i + ',')}</div>
+      <div
+        className='flex items-baseline justify-center mb-3 '
+        style={{ flexFlow: 'row nowrap' }}
+      >
+        {sorterArray.map((i) => (
+          <Bar
+            key={i.index}
+            number={i.value}
+            itemsAmount={arraySize}
+            color={i.color}
+          />
+        ))}
+      </div>
       <div className='flex flex-wrap justify-center space-x-2'>
         <button
           className='bg-blue-600 text-gray-200 rounded hover:bg-blue-500 px-4 mb-2 py-1 focus:outline-none'
@@ -86,7 +86,7 @@ const Sorter = () => {
         </button>
         <button
           className='bg-blue-600 text-gray-200 rounded hover:bg-blue-500 px-4 mb-2 py-1 focus:outline-none'
-          onClick={() => setSorterArray([...shuffleArray(sorterArray)])}
+          onClick={() => randomize(arraySize)}
         >
           Randomize
         </button>
@@ -94,10 +94,10 @@ const Sorter = () => {
           <p>Array Size: {arraySize}</p>
           <input
             type='range'
-            min={20}
-            max={200}
+            min={10}
+            max={100}
             value={arraySize}
-            onChange={updateArray}
+            onChange={(e) => setArraySize(e.target.value)}
           />
         </div>
         <div className='flex items-center space-x-1 mb-2'>
@@ -107,7 +107,7 @@ const Sorter = () => {
             min={1}
             max={10}
             value={speed}
-            onChange={updateSpeed}
+            onChange={(e) => setSpeed(e.target.value)}
           />
         </div>
       </div>
