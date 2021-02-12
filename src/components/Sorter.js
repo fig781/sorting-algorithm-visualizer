@@ -3,8 +3,8 @@ import Bar from './Bar';
 import bubbleSort from '../algorithms/bubbleSort';
 
 const Sorter = () => {
-  const [arraySize, setArraySize] = useState(30);
-  const [speed, setSpeed] = useState(5);
+  const [arraySize, setArraySize] = useState(10);
+  const [speed, setSpeed] = useState(3);
   const [sorterArray, setSorterArray] = useState([]);
 
   useEffect(() => {
@@ -20,10 +20,10 @@ const Sorter = () => {
   }, []);
 
   useEffect(() => {
-    randomize(arraySize);
+    randomizeArray(arraySize);
   }, [arraySize]);
 
-  const randomize = (arraySize) => {
+  const randomizeArray = (arraySize) => {
     const arr = [];
     for (let x = 1; x <= arraySize; x++) {
       arr.push({
@@ -37,14 +37,13 @@ const Sorter = () => {
 
   const interpreteChanges = (changeList) => {
     const len = changeList.length;
-    console.log(len);
+    //runOneChange(changeList[0], 0);
     for (let x = 0; x < len; x++) {
       setTimeout(() => {
         const newState = sorterArray;
         newState[changeList[x].index] = changeList[x];
-        setSorterArray(...[newState]);
-        console.log(changeList[x]);
-      }, speed * 500 * x);
+        setSorterArray([...newState]);
+      }, (9 - speed) * 30 * x);
     }
   };
 
@@ -59,7 +58,7 @@ const Sorter = () => {
   return (
     <div className='my-5'>
       <div
-        className='flex items-baseline justify-center mb-3 '
+        className='flex items-baseline justify-center mb-3'
         style={{ flexFlow: 'row nowrap' }}
       >
         {sorterArray.map((i) => (
@@ -86,7 +85,7 @@ const Sorter = () => {
         </button>
         <button
           className='bg-blue-600 text-gray-200 rounded hover:bg-blue-500 px-4 mb-2 py-1 focus:outline-none'
-          onClick={() => randomize(arraySize)}
+          onClick={() => randomizeArray(arraySize)}
         >
           Randomize
         </button>
@@ -95,7 +94,7 @@ const Sorter = () => {
           <input
             type='range'
             min={10}
-            max={100}
+            max={80}
             value={arraySize}
             onChange={(e) => setArraySize(e.target.value)}
           />
@@ -105,7 +104,7 @@ const Sorter = () => {
           <input
             type='range'
             min={1}
-            max={10}
+            max={8}
             value={speed}
             onChange={(e) => setSpeed(e.target.value)}
           />
