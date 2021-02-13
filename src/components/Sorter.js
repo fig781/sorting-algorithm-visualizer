@@ -1,8 +1,7 @@
 import { React, useState, useEffect } from 'react';
 import Bar from './Bar';
-import bubbleSort from '../algorithms/bubbleSort';
 
-const Sorter = () => {
+const Sorter = ({ sortingAlgorithm }) => {
   const [arraySize, setArraySize] = useState(10);
   const [speed, setSpeed] = useState(3);
   const [sorterArray, setSorterArray] = useState([]);
@@ -35,16 +34,32 @@ const Sorter = () => {
     setSorterArray(...[arr]);
   };
 
-  const interpreteChanges = (changeList) => {
+  // const finishColoringBars = () => {
+  //   console.log('runith');
+  //   for (let x = arraySize - 1; x >= 0; x--) {
+  //     if (sorterArray[x].color !== '#a78bfa') {
+  //       const newState = sorterArray;
+  //       newState[x] = { index: x, color: '#a78bfa', value: newState[x].value };
+  //       setSorterArray([...newState]);
+  //     }
+  //   }
+  // };
+
+  const interpreteChanges = async (changeList) => {
     const len = changeList.length;
-    //runOneChange(changeList[0], 0);
+
     for (let x = 0; x < len; x++) {
-      setTimeout(() => {
-        const newState = sorterArray;
-        newState[changeList[x].index] = changeList[x];
-        setSorterArray([...newState]);
-      }, (9 - speed) * 30 * x);
+      await new Promise((resolve, reject) => {
+        setTimeout(() => {
+          console.log('Ran');
+          const newState = sorterArray;
+          newState[changeList[x].index] = changeList[x];
+          setSorterArray([...newState]);
+        }, (9 - speed) * 30 * x);
+        resolve();
+      });
     }
+    //finishColoringBars();
   };
 
   const onClickSort = () => {
@@ -52,15 +67,12 @@ const Sorter = () => {
     for (let i of sorterArray) {
       arr.push(i.value);
     }
-    interpreteChanges(bubbleSort(arr));
+    interpreteChanges(sortingAlgorithm(arr));
   };
 
   return (
     <div className='my-5'>
-      <div
-        className='flex items-baseline justify-center mb-3'
-        style={{ flexFlow: 'row nowrap' }}
-      >
+      <div className='flex items-end justify-center mb-3 h-80'>
         {sorterArray.map((i) => (
           <Bar
             key={i.index}

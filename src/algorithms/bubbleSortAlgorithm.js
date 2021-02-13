@@ -1,7 +1,7 @@
 // {color: null, index: 0}
 // {swap: [0,1]}
 
-const bubbleSort = (arr) => {
+const bubbleSortAlgorithm = (arr) => {
   let changeList = [];
   const len = arr.length;
   let swapped;
@@ -40,4 +40,4 @@ const bubbleSort = (arr) => {
   return changeList;
 };
 
-export default bubbleSort;
+export default bubbleSortAlgorithm;

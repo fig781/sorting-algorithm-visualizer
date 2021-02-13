@@ -1,17 +1,17 @@
 import React from 'react';
 import Sorter from '../components/Sorter';
-import selectionSortAlgorithm from '../algorithms/selectionSortAlgorithm';
+import insertionSortAlgorithm from '../algorithms/insertionSortAlgorithm';
 
-const SelectionSort = () => {
+const InsertionSort = () => {
   return (
     <div>
       <section className='m-4'>
         <h1 className='text-center text-5xl'>Selection Sort</h1>
-        <Sorter sortingAlgorithm={selectionSortAlgorithm} />
+        <Sorter sortingAlgorithm={insertionSortAlgorithm} />
         <article></article>
       </section>
     </div>
   );
 };
 
-export default SelectionSort;
+export default InsertionSort;

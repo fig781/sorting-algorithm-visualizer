@@ -14,6 +14,9 @@ const Header = () => {
         <Link to='/selectionsort'>
           <button>selectionsort</button>
         </Link>
+        <Link to='/insertionsort'>
+          <button>insertionSort</button>
+        </Link>
       </div>
     </nav>
   );
