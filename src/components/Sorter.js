@@ -5,69 +5,73 @@ const Sorter = ({ sortingAlgorithm }) => {
   const [arraySize, setArraySize] = useState(10);
   const [speed, setSpeed] = useState(3);
   const [sorterArray, setSorterArray] = useState([]);
+  const [sorterArrayOriginal, setSorterArrayOriginal] = useState([]);
+  const [intervalId, setIntervalId] = useState();
+  const [sorting, setSorting] = useState(false);
 
   useEffect(() => {
     const arr = [];
-    for (let x = 1; x <= 30; x++) {
+    for (let x = 0; x < 10; x++) {
       arr.push({
-        index: x - 1,
+        index: x,
         color: null,
-        value: Math.round(Math.random() * (30 - 1) + 1),
+        value: Math.round(Math.random() * (10 - 1) + 1),
       });
     }
     setSorterArray(...[arr]);
+    setSorterArrayOriginal([...arr]);
   }, []);
 
-  useEffect(() => {
-    randomizeArray(arraySize);
-  }, [arraySize]);
-
   const randomizeArray = (arraySize) => {
+    clearInterval(intervalId);
+    setSorting(false);
     const arr = [];
-    for (let x = 1; x <= arraySize; x++) {
+    for (let x = 0; x < arraySize; x++) {
       arr.push({
-        index: x - 1,
+        index: x,
         color: null,
         value: Math.round(Math.random() * (arraySize - 1) + 1),
       });
     }
     setSorterArray(...[arr]);
+    setSorterArrayOriginal([...arr]);
   };
 
-  // const finishColoringBars = () => {
-  //   console.log('runith');
-  //   for (let x = arraySize - 1; x >= 0; x--) {
-  //     if (sorterArray[x].color !== '#a78bfa') {
-  //       const newState = sorterArray;
-  //       newState[x] = { index: x, color: '#a78bfa', value: newState[x].value };
-  //       setSorterArray([...newState]);
-  //     }
-  //   }
-  // };
-
-  const interpreteChanges = async (changeList) => {
+  const interpreteChanges = (changeList) => {
     const len = changeList.length;
+    let x = 0;
+    let barUpdateInterval = setInterval(() => {
+      const newState = sorterArray;
+      newState[changeList[x].index] = changeList[x];
+      setSorterArray([...newState]);
 
-    for (let x = 0; x < len; x++) {
-      await new Promise((resolve, reject) => {
-        setTimeout(() => {
-          console.log('Ran');
-          const newState = sorterArray;
-          newState[changeList[x].index] = changeList[x];
-          setSorterArray([...newState]);
-        }, (9 - speed) * 30 * x);
-        resolve();
-      });
-    }
-    //finishColoringBars();
+      if (x === len - 1) {
+        clearInterval(barUpdateInterval);
+        setSorting(false);
+      }
+      x++;
+    }, (9 - speed) * 30);
+    return barUpdateInterval;
   };
 
   const onClickSort = () => {
+    setSorting(true);
     const arr = [];
     for (let i of sorterArray) {
       arr.push(i.value);
     }
-    interpreteChanges(sortingAlgorithm(arr));
+    setIntervalId(interpreteChanges(sortingAlgorithm(arr)));
+  };
+
+  const onClickReset = () => {
+    clearInterval(intervalId);
+    setSorterArray([...sorterArrayOriginal]);
+    setSorting(false);
+  };
+
+  const onChangeArraySize = (e) => {
+    setArraySize(e.target.value);
+    randomizeArray(e.target.value);
   };
 
   return (
@@ -84,15 +88,20 @@ const Sorter = ({ sortingAlgorithm }) => {
       </div>
       <div className='flex flex-wrap justify-center space-x-2'>
         <button
-          className='bg-blue-600 text-gray-200 rounded hover:bg-blue-500 px-4 mb-2 py-1 focus:outline-none'
+          className={`bg-blue-600 text-gray-200 rounded px-4 mb-2 py-1 focus:outline-none ${
+            sorting ? 'bg-opacity-50' : 'hover:bg-blue-500'
+          }`}
           onClick={onClickSort}
+          disabled={sorting}
         >
           Sort
         </button>
-        <button className='bg-blue-600 text-gray-200 rounded hover:bg-blue-500 px-4 mb-2 py-1 focus:outline-none'>
-          Pause
-        </button>
-        <button className='bg-blue-600 text-gray-200 rounded hover:bg-blue-500 px-4 mb-2 py-1 focus:outline-none'>
+        <button
+          className={`bg-blue-600 text-gray-200 rounded px-4 mb-2 py-1 focus:outline-none ${
+            !sorting ? 'bg-opacity-50' : 'hover:bg-blue-500'
+          }`}
+          onClick={onClickReset}
+        >
           Reset
         </button>
         <button
@@ -108,7 +117,7 @@ const Sorter = ({ sortingAlgorithm }) => {
             min={10}
             max={80}
             value={arraySize}
-            onChange={(e) => setArraySize(e.target.value)}
+            onChange={onChangeArraySize}
           />
         </div>
         <div className='flex items-center space-x-1 mb-2'>
@@ -119,6 +128,7 @@ const Sorter = ({ sortingAlgorithm }) => {
             max={8}
             value={speed}
             onChange={(e) => setSpeed(e.target.value)}
+            disabled={sorting}
           />
         </div>
       </div>
