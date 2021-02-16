@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import BubbleSort from './pages/BubbleSort';
 import SelectionSort from './pages/SelectionSort';
 import InsertionSort from './pages/InsertionSort';
+import QuickSort from './pages/QuickSort';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path='/bubblesort' component={BubbleSort} />
         <Route path='/selectionsort' component={SelectionSort} />
         <Route path='/insertionsort' component={InsertionSort} />
+        <Route path='/quicksort' component={QuickSort} />
       </Switch>
     </Router>
   );

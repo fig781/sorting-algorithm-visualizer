@@ -2,7 +2,7 @@ import { React, useState, useEffect } from 'react';
 import Bar from './Bar';
 
 const Sorter = ({ sortingAlgorithm }) => {
-  const [arraySize, setArraySize] = useState(10);
+  const [arraySize, setArraySize] = useState(20);
   const [speed, setSpeed] = useState(3);
   const [sorterArray, setSorterArray] = useState([]);
   const [sorterArrayOriginal, setSorterArrayOriginal] = useState([]);
@@ -11,15 +11,18 @@ const Sorter = ({ sortingAlgorithm }) => {
 
   useEffect(() => {
     const arr = [];
-    for (let x = 0; x < 10; x++) {
+    for (let x = 0; x < 20; x++) {
       arr.push({
         index: x,
         color: null,
-        value: Math.round(Math.random() * (10 - 1) + 1),
+        value: Math.round(Math.random() * (20 - 1) + 1),
       });
     }
     setSorterArray(...[arr]);
     setSorterArrayOriginal([...arr]);
+    return () => {
+      clearInterval(intervalId);
+    };
   }, []);
 
   const randomizeArray = (arraySize) => {
@@ -118,6 +121,7 @@ const Sorter = ({ sortingAlgorithm }) => {
             max={80}
             value={arraySize}
             onChange={onChangeArraySize}
+            disabled={sorting}
           />
         </div>
         <div className='flex items-center space-x-1 mb-2'>
