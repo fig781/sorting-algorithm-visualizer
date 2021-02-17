@@ -10,6 +10,9 @@ const Header = () => {
         <div
           className='origin-top-right absolute left-0 mt-1
                     rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5'
+          onClick={() => {
+            setShowList(!showList);
+          }}
         >
           <div
             className='py-1'
@@ -18,43 +21,28 @@ const Header = () => {
             aria-labelledby='options-menu'
           >
             <Link to='/bubblesort'>
-              <button
-                onClick={() => {
-                  setShowList(!showList);
-                }}
-                className='block text-left px-4 py-2 w-full text-gray-700 hover:bg-gray-100 hover:text-gray-900'
-              >
+              <button className='block text-left px-4 py-2 w-full text-gray-700 hover:bg-gray-100 hover:text-gray-900'>
                 Bubble Sort
               </button>
             </Link>
             <Link to='/selectionsort'>
-              <button
-                onClick={() => {
-                  setShowList(!showList);
-                }}
-                className='block text-left px-4 py-2 w-full text-gray-700 hover:bg-gray-100 hover:text-gray-900'
-              >
+              <button className='block text-left px-4 py-2 w-full text-gray-700 hover:bg-gray-100 hover:text-gray-900'>
                 Selection Sort
               </button>
             </Link>
             <Link to='/insertionsort'>
-              <button
-                onClick={() => {
-                  setShowList(!showList);
-                }}
-                className='block text-left px-4 py-2 w-full text-gray-700 hover:bg-gray-100 hover:text-gray-900'
-              >
+              <button className='block text-left px-4 py-2 w-full text-gray-700 hover:bg-gray-100 hover:text-gray-900'>
                 Insertion Sort
               </button>
             </Link>
             <Link to='/quicksort'>
-              <button
-                onClick={() => {
-                  setShowList(!showList);
-                }}
-                className='block text-left px-4 py-2 w-full text-gray-700 hover:bg-gray-100 hover:text-gray-900'
-              >
+              <button className='block text-left px-4 py-2 w-full text-gray-700 hover:bg-gray-100 hover:text-gray-900'>
                 Quick Sort
+              </button>
+            </Link>
+            <Link to='/mergesort'>
+              <button className='block text-left px-4 py-2 w-full text-gray-700 hover:bg-gray-100 hover:text-gray-900'>
+                Merge Sort
               </button>
             </Link>
           </div>

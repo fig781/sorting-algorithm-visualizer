@@ -6,6 +6,7 @@ import BubbleSort from './pages/BubbleSort';
 import SelectionSort from './pages/SelectionSort';
 import InsertionSort from './pages/InsertionSort';
 import QuickSort from './pages/QuickSort';
+import MergeSort from './pages/MergeSort';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path='/selectionsort' component={SelectionSort} />
         <Route path='/insertionsort' component={InsertionSort} />
         <Route path='/quicksort' component={QuickSort} />
+        <Route path='/mergesort' component={MergeSort} />
       </Switch>
     </Router>
   );
