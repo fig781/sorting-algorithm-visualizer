@@ -59,10 +59,8 @@ const Sorter = ({ sortingAlgorithm }) => {
 
   const onClickSort = () => {
     setSorting(true);
-    const arr = [];
-    for (let i of sorterArray) {
-      arr.push(i.value);
-    }
+    const arr = sorterArray.map((i) => i.value);
+    console.log();
     setIntervalId(interpreteChanges(sortingAlgorithm(arr)));
   };
 
