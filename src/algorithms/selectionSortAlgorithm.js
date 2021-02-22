@@ -3,7 +3,7 @@ const selectionSortAlgorithm = (arr) => {
   const len = arr.length;
   for (let x = 0; x < len - 1; x++) {
     changeList.push({ index: x, value: arr[x], color: '#6ee7b7' });
-    let min = x; //min holds the current minimum number position for each pass; x holds the Initial min number
+    let min = x;
     for (let y = x + 1; y < len; y++) {
       changeList.push({ index: y, value: arr[y], color: '#ec4899' });
       changeList.push({ index: y, value: arr[y], color: null });
@@ -23,6 +23,11 @@ const selectionSortAlgorithm = (arr) => {
     changeList.push({ index: min, value: arr[min], color: null });
     changeList.push({ index: x, value: arr[x], color: '#a78bfa' });
   }
+  changeList.push({
+    index: arr.length - 1,
+    value: arr[arr.length - 1],
+    color: '#a78bfa',
+  });
   return changeList;
 };
 
