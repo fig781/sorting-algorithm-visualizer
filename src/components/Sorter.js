@@ -117,7 +117,7 @@ const Sorter = ({ sortingAlgorithm }) => {
   };
 
   return (
-    <div className='my-5'>
+    <div className='mt-5'>
       <div className='flex items-end justify-center mb-3 h-80'>
         {sorterArray.map((i) => (
           <Bar

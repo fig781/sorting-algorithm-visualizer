@@ -6,7 +6,7 @@ const Bar = ({ number, color, itemsAmount }) => {
       className='w-5 text-center border border-white flex flex-col-reverse'
       style={{
         height: (number * 20) / itemsAmount + 'rem',
-        backgroundColor: !color ? 'rgba(209, 213, 219)' : color,
+        backgroundColor: !color ? '#b3b3cc' : color,
       }}
     >
       <span className='text-xs'>{number}</span>
