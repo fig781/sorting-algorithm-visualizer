@@ -35,6 +35,11 @@ const Header = () => {
                 Insertion Sort
               </button>
             </Link>
+            <Link to='/heapsort'>
+              <button className='block text-left px-4 py-2 w-full text-gray-700 hover:bg-gray-100 hover:text-gray-900'>
+                Heap Sort
+              </button>
+            </Link>
             <Link to='/quicksort'>
               <button className='block text-left px-4 py-2 w-full text-gray-700 hover:bg-gray-100 hover:text-gray-900'>
                 Quick Sort
