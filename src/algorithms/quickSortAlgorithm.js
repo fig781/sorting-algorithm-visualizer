@@ -4,54 +4,6 @@
 
 let changeList;
 
-// const quickSortAlgorithm = (arr, left, right) => {
-//   let index = partition(arr, left, right);
-
-//   if (left < index - 1) {
-//     quickSortAlgorithm(arr, left, index - 1);
-//   }
-//   if (index < right) {
-//     quickSortAlgorithm(arr, index, right);
-//   }
-
-//   changeList.push({ index: index, value: arr[index], color: '#a78bfa' });
-//   return arr;
-// };
-
-// const partition = (arr, left, right) => {
-//   let pivot = arr[Math.floor((right + left) / 2)];
-//   let l = left;
-//   let r = right;
-
-//   changeList.push({ index: l, value: arr[l], color: '#ec4899' });
-//   changeList.push({ index: r, value: arr[r], color: '#6ee7b7' });
-
-//   while (l <= r) {
-//     while (arr[l] < pivot) {
-//       l++;
-//       changeList.push({ index: l, value: arr[l], color: '#ec4899' });
-//       changeList.push({ index: l, value: arr[l], color: null });
-//     }
-//     while (arr[r] > pivot) {
-//       r--;
-//       changeList.push({ index: r, value: arr[r], color: '#6ee7b7' });
-//       changeList.push({ index: r, value: arr[r], color: null });
-//     }
-//     if (l <= r) {
-//       let tmp = arr[l];
-//       arr[l] = arr[r];
-//       arr[r] = tmp;
-//       l++;
-//       r--;
-//     }
-//   }
-//   changeList.push({ index: l, value: arr[l], color: '#ec4899' });
-//   changeList.push({ index: l, value: arr[l], color: null });
-//   changeList.push({ index: r, value: arr[r], color: '#6ee7b7' });
-//   changeList.push({ index: r, value: arr[r], color: null });
-//   return l;
-// };
-
 const quickSortAlgorithm = (arr) => {
   changeList = [];
   partition(arr, 0, arr.length - 1);
@@ -65,17 +17,27 @@ const partition = (arr, low, high) => {
     h = high;
     tmp = arr[low];
     while (l < h) {
+      changeList.push({ index: l, value: arr[l], color: '#ec4899' });
       while (arr[h] > tmp) {
+        changeList.push({ index: h, value: arr[h], color: '#6ee7b7' });
+        //changeList.push({ index: h, value: arr[h], color: null });
         h--;
       }
       arr[l] = arr[h];
+      changeList.push({ index: l, value: arr[l], color: '#ec4899' });
+      //changeList.push({ index: l, value: arr[l], color: null });
 
       while (tmp >= arr[l] && l < h) {
+        changeList.push({ index: l, value: arr[l], color: '#ec4899' });
+        //changeList.push({ index: l, value: arr[l], color: null });
         l++;
       }
       arr[h] = arr[l];
+      changeList.push({ index: h, value: arr[h], color: '#6ee7b7' });
+      //changeList.push({ index: h, value: arr[h], color: null });
     }
     arr[l] = tmp;
+    changeList.push({ index: l, value: arr[l], color: '#a78bfa' });
     partition(arr, low, l - 1);
     low = l + 1;
   }

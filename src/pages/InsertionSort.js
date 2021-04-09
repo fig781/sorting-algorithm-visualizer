@@ -1,11 +1,13 @@
 import React from 'react';
 import Sorter from '../components/Sorter';
+import Header from '../components/Header';
 import insertionSortAlgorithm from '../algorithms/insertionSortAlgorithm';
 import InfoSection from '../components/InfoSection';
 
 const InsertionSort = () => {
   return (
-    <div>
+    <>
+      <Header />
       <section className='m-4'>
         <h1 className='text-center text-5xl'>Insertion Sort</h1>
         <Sorter sortingAlgorithm={insertionSortAlgorithm} />
@@ -17,7 +19,7 @@ const InsertionSort = () => {
           spaceComp='O(1)'
         />
       </section>
-    </div>
+    </>
   );
 };
 

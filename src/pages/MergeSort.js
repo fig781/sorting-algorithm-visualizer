@@ -1,11 +1,13 @@
 import React from 'react';
+import Header from '../components/Header';
 import Sorter from '../components/Sorter';
 import mergeSortAlgorithm from '../algorithms/mergeSortAlgorithm';
 import InfoSection from '../components/InfoSection';
 
 const MergeSort = () => {
   return (
-    <div>
+    <>
+      <Header />
       <section className='m-4'>
         <h1 className='text-center text-5xl'>Merge Sort</h1>
         <Sorter sortingAlgorithm={mergeSortAlgorithm} />
@@ -17,7 +19,7 @@ const MergeSort = () => {
           spaceComp='O(n)'
         />
       </section>
-    </div>
+    </>
   );
 };
 

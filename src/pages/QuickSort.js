@@ -1,11 +1,13 @@
 import React from 'react';
+import Header from '../components/Header';
 import Sorter from '../components/Sorter';
 import quickSortAlgorithm from '../algorithms/quickSortAlgorithm';
 import InfoSection from '../components/InfoSection';
 
 const QuickSort = () => {
   return (
-    <div>
+    <>
+      <Header />
       <section className='m-4'>
         <h1 className='text-center text-5xl'>Quick Sort</h1>
         <Sorter sortingAlgorithm={quickSortAlgorithm} />
@@ -17,7 +19,7 @@ const QuickSort = () => {
           spaceComp='O(log n)'
         />
       </section>
-    </div>
+    </>
   );
 };
 

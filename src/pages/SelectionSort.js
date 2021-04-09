@@ -1,11 +1,13 @@
 import React from 'react';
+import Header from '../components/Header';
 import Sorter from '../components/Sorter';
 import selectionSortAlgorithm from '../algorithms/selectionSortAlgorithm';
 import InfoSection from '../components/InfoSection';
 
 const SelectionSort = () => {
   return (
-    <div>
+    <>
+      <Header />
       <section className='m-4'>
         <h1 className='text-center text-5xl'>Selection Sort</h1>
         <Sorter sortingAlgorithm={selectionSortAlgorithm} />
@@ -17,7 +19,7 @@ const SelectionSort = () => {
           spaceComp='O(1)'
         />
       </section>
-    </div>
+    </>
   );
 };
 

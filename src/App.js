@@ -12,7 +12,6 @@ import HeapSort from './pages/HeapSort';
 function App() {
   return (
     <Router>
-      <Header />
       <Switch>
         <Route path='/' exact component={Home} />
         <Route path='/bubblesort' component={BubbleSort} />
