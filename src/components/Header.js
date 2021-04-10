@@ -58,7 +58,7 @@ const Header = ({ bgColor = 'gray' }) => {
 
   return (
     <nav
-      className={`bg-${bgColor}-600 flex items-center h-16 realtive shawdow-sm`}
+      className={`bg-${bgColor}-600 flex items-center h-16 justify-between sm:justify-start`}
     >
       <Link
         to='/'
@@ -67,7 +67,7 @@ const Header = ({ bgColor = 'gray' }) => {
       >
         <button>Home</button>
       </Link>
-      <div className='relative inline-block text-left ml-5'>
+      <div className='relative inline-block text-left mx-5'>
         <button
           onClick={() => {
             setShowList(!showList);

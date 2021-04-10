@@ -15,10 +15,10 @@ const Home = () => {
       <Header />
       <header>
         <h1 className='text-center text-6xl mt-10'>
-          Sorting Algorithm Visualizer
+          Sorting Algorithms Visualizer
         </h1>
       </header>
-      <section className='flex-grow mt-14 mb-8 mx-auto grid lg:grid-cols-3 md:grid-cols-2'>
+      <section className='flex-grow mt-14 mb-8 mx-auto grid  grid-cols-1 lg:grid-cols-3 sm:grid-cols-2'>
         <div className='font-mono cursor-pointer shadow-md hover:shadow-xl  rounded-3xl h-48 w-48 text-4xl text-center m-2 text-white bg-gradient-to-br from-blue-400 via-blue-500 to-blue-600 hover:from-blue-600'>
           <Link to='/bubblesort'>
             <img
