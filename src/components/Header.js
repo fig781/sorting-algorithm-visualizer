@@ -21,32 +21,32 @@ const Header = ({ bgColor = 'gray' }) => {
             aria-labelledby='options-menu'
           >
             <Link to='/bubblesort'>
-              <button className='block text-left px-4 py-2 w-full text-gray-700 hover:bg-gray-100 hover:text-gray-900'>
+              <button className='block text-left px-4 py-2 w-full text-gray-700 hover:bg-gray-200 hover:text-gray-900'>
                 Bubble Sort
               </button>
             </Link>
             <Link to='/selectionsort'>
-              <button className='block text-left px-4 py-2 w-full text-gray-700 hover:bg-gray-100 hover:text-gray-900'>
+              <button className='block text-left px-4 py-2 w-full text-gray-700 hover:bg-gray-200 hover:text-gray-900'>
                 Selection Sort
               </button>
             </Link>
             <Link to='/insertionsort'>
-              <button className='block text-left px-4 py-2 w-full text-gray-700 hover:bg-gray-100 hover:text-gray-900'>
+              <button className='block text-left px-4 py-2 w-full text-gray-700 hover:bg-gray-200 hover:text-gray-900'>
                 Insertion Sort
               </button>
             </Link>
             <Link to='/heapsort'>
-              <button className='block text-left px-4 py-2 w-full text-gray-700 hover:bg-gray-100 hover:text-gray-900'>
+              <button className='block text-left px-4 py-2 w-full text-gray-700 hover:bg-gray-200 hover:text-gray-900'>
                 Heap Sort
               </button>
             </Link>
             <Link to='/quicksort'>
-              <button className='block text-left px-4 py-2 w-full text-gray-700 hover:bg-gray-100 hover:text-gray-900'>
+              <button className='block text-left px-4 py-2 w-full text-gray-700 hover:bg-gray-200 hover:text-gray-900'>
                 Quick Sort
               </button>
             </Link>
             <Link to='/mergesort'>
-              <button className='block text-left px-4 py-2 w-full text-gray-700 hover:bg-gray-100 hover:text-gray-900'>
+              <button className='block text-left px-4 py-2 w-full text-gray-700 hover:bg-gray-200 hover:text-gray-900'>
                 Merge Sort
               </button>
             </Link>
@@ -58,9 +58,13 @@ const Header = ({ bgColor = 'gray' }) => {
 
   return (
     <nav
-      className={`bg-${bgColor}-300 flex items-center h-16 realtive shawdow-sm`}
+      className={`bg-${bgColor}-500 flex items-center h-16 realtive shawdow-sm`}
     >
-      <Link to='/' className='ml-5 justify-start'>
+      <Link
+        to='/'
+        className='ml-5 justify-start items-center inline-flex justify-center rounded-md 
+                    shadow-sm bg-gray-600 text-gray-200 px-4 py-1 focus:outline-none hover:bg-gray-700'
+      >
         <button>Home</button>
       </Link>
       <div className='relative inline-block text-left ml-5'>
@@ -70,7 +74,7 @@ const Header = ({ bgColor = 'gray' }) => {
           }}
           type='button'
           className='items-center inline-flex justify-center rounded-md 
-                    shadow-sm bg-blue-600 text-gray-200 px-4 py-1 focus:outline-none hover:bg-blue-500'
+                    shadow-sm bg-gray-600 text-gray-200 px-4 py-1 focus:outline-none hover:bg-gray-700'
           id='options-menu'
           aria-haspopup='true'
           aria-expanded='true'

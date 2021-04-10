@@ -1,7 +1,7 @@
 import { React, useState, useEffect } from 'react';
 import Bar from './Bar';
 
-const Sorter = ({ sortingAlgorithm }) => {
+const Sorter = ({ sortingAlgorithm, btnColor }) => {
   const [arraySize, setArraySize] = useState(50);
   const [speed, setSpeed] = useState(6);
   const [maxArraySize, setMaxArraySize] = useState(80);
@@ -130,8 +130,8 @@ const Sorter = ({ sortingAlgorithm }) => {
       </div>
       <div className='flex flex-wrap justify-center space-x-2'>
         <button
-          className={`bg-blue-600 text-gray-200 rounded px-4 mb-2 py-1 focus:outline-none ${
-            sorting ? 'bg-opacity-50' : 'hover:bg-blue-500'
+          className={`bg-${btnColor}-500 text-gray-200 rounded px-4 mb-2 py-1 focus:outline-none ${
+            sorting ? 'bg-opacity-50' : 'hover:bg-gray-300'
           }`}
           onClick={onClickSort}
           disabled={sorting}
@@ -139,13 +139,13 @@ const Sorter = ({ sortingAlgorithm }) => {
           Sort
         </button>
         <button
-          className={`bg-blue-600 text-gray-200 rounded px-4 mb-2 py-1 focus:outline-none hover:bg-blue-500`}
+          className={`bg-${btnColor}-500 text-gray-200 rounded px-4 mb-2 py-1 focus:outline-none hover:bg-gray-300`}
           onClick={onClickReset}
         >
           Reset
         </button>
         <button
-          className='bg-blue-600 text-gray-200 rounded hover:bg-blue-500 px-4 mb-2 py-1 focus:outline-none'
+          className={`bg-${btnColor}-500 text-gray-200 rounded hover:bg-gray-300 px-4 mb-2 py-1 focus:outline-none`}
           onClick={() => randomizeArray(arraySize)}
         >
           Randomize
