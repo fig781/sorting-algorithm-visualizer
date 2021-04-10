@@ -7,7 +7,7 @@ import InfoSection from '../components/InfoSection';
 const BubbleSort = () => {
   return (
     <>
-      <Header />
+      <Header bgColor='blue' />
       <main className='m-4'>
         <h1 className='text-center text-5xl'>Bubble Sort</h1>
         <Sorter sortingAlgorithm={bubbleSortAlgorithm} />

@@ -7,7 +7,7 @@ import InfoSection from '../components/InfoSection';
 const MergeSort = () => {
   return (
     <>
-      <Header />
+      <Header bgColor='purple' />
       <section className='m-4'>
         <h1 className='text-center text-5xl'>Merge Sort</h1>
         <Sorter sortingAlgorithm={mergeSortAlgorithm} />

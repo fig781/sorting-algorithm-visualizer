@@ -7,7 +7,7 @@ import InfoSection from '../components/InfoSection';
 const HeapSort = () => {
   return (
     <>
-      <Header />
+      <Header bgColor='red' />
       <main className='m-4'>
         <h1 className='text-center text-5xl'>Heap Sort</h1>
         <Sorter sortingAlgorithm={heapSortAlgorithm} />

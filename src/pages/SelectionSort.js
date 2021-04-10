@@ -7,7 +7,7 @@ import InfoSection from '../components/InfoSection';
 const SelectionSort = () => {
   return (
     <>
-      <Header />
+      <Header bgColor='green' />
       <section className='m-4'>
         <h1 className='text-center text-5xl'>Selection Sort</h1>
         <Sorter sortingAlgorithm={selectionSortAlgorithm} />

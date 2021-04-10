@@ -1,7 +1,7 @@
 import { React, useState } from 'react';
 import { Link } from 'react-router-dom';
 //rafce
-const Header = () => {
+const Header = ({ bgColor = 'gray' }) => {
   const [showList, setShowList] = useState(false);
 
   const renderList = () => {
@@ -57,7 +57,9 @@ const Header = () => {
   };
 
   return (
-    <nav className='bg-blue-200 flex items-center h-16 realtive shawdow-sm'>
+    <nav
+      className={`bg-${bgColor}-300 flex items-center h-16 realtive shawdow-sm`}
+    >
       <Link to='/' className='ml-5 justify-start'>
         <button>Home</button>
       </Link>
@@ -67,7 +69,7 @@ const Header = () => {
             setShowList(!showList);
           }}
           type='button'
-          className='items-center inline-flex justify-center rounded-md border border-gray-300 
+          className='items-center inline-flex justify-center rounded-md 
                     shadow-sm bg-blue-600 text-gray-200 px-4 py-1 focus:outline-none hover:bg-blue-500'
           id='options-menu'
           aria-haspopup='true'

@@ -7,7 +7,7 @@ import InfoSection from '../components/InfoSection';
 const QuickSort = () => {
   return (
     <>
-      <Header />
+      <Header bgColor='yellow' />
       <section className='m-4'>
         <h1 className='text-center text-5xl'>Quick Sort</h1>
         <Sorter sortingAlgorithm={quickSortAlgorithm} />

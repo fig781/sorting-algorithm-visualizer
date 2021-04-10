@@ -7,7 +7,7 @@ import InfoSection from '../components/InfoSection';
 const InsertionSort = () => {
   return (
     <>
-      <Header />
+      <Header bgColor='indigo' />
       <section className='m-4'>
         <h1 className='text-center text-5xl'>Insertion Sort</h1>
         <Sorter sortingAlgorithm={insertionSortAlgorithm} />
