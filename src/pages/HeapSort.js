@@ -1,10 +1,14 @@
-import React from 'react';
+import { React, useLayoutEffect } from 'react';
 import Header from '../components/Header';
 import heapSortAlgorithm from '../algorithms/heapSortAlgorithm';
 import Sorter from '../components/Sorter';
 import InfoSection from '../components/InfoSection';
 
 const HeapSort = () => {
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  });
+
   return (
     <>
       <Header bgColor='red' />

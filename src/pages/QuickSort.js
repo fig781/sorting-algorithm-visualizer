@@ -1,10 +1,14 @@
-import React from 'react';
+import { React, useLayoutEffect } from 'react';
 import Header from '../components/Header';
 import Sorter from '../components/Sorter';
 import quickSortAlgorithm from '../algorithms/quickSortAlgorithm';
 import InfoSection from '../components/InfoSection';
 
 const QuickSort = () => {
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  });
+
   return (
     <>
       <Header bgColor='yellow' />

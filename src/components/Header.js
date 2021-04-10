@@ -58,12 +58,12 @@ const Header = ({ bgColor = 'gray' }) => {
 
   return (
     <nav
-      className={`bg-${bgColor}-500 flex items-center h-16 realtive shawdow-sm`}
+      className={`bg-${bgColor}-600 flex items-center h-16 realtive shawdow-sm`}
     >
       <Link
         to='/'
         className='ml-5 justify-start items-center inline-flex justify-center rounded-md 
-                    shadow-sm bg-gray-600 text-gray-200 px-4 py-1 focus:outline-none hover:bg-gray-700'
+                    shadow-sm bg-gray-700 text-gray-200 px-4 py-1 focus:outline-none hover:bg-gray-800'
       >
         <button>Home</button>
       </Link>
@@ -74,7 +74,7 @@ const Header = ({ bgColor = 'gray' }) => {
           }}
           type='button'
           className='items-center inline-flex justify-center rounded-md 
-                    shadow-sm bg-gray-600 text-gray-200 px-4 py-1 focus:outline-none hover:bg-gray-700'
+                    shadow-sm bg-gray-700 text-gray-200 px-4 py-1 focus:outline-none hover:bg-gray-800'
           id='options-menu'
           aria-haspopup='true'
           aria-expanded='true'

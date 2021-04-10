@@ -1,10 +1,14 @@
-import React from 'react';
+import { React, useLayoutEffect } from 'react';
 import Sorter from '../components/Sorter';
 import Header from '../components/Header';
 import insertionSortAlgorithm from '../algorithms/insertionSortAlgorithm';
 import InfoSection from '../components/InfoSection';
 
 const InsertionSort = () => {
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  });
+
   return (
     <>
       <Header bgColor='indigo' />
