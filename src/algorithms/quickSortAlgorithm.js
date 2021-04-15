@@ -17,27 +17,27 @@ const partition = (arr, low, high) => {
     h = high;
     tmp = arr[low];
     while (l < h) {
-      changeList.push({ index: l, value: arr[l], color: '#ec4899' });
       while (arr[h] > tmp) {
         changeList.push({ index: h, value: arr[h], color: '#6ee7b7' });
-        //changeList.push({ index: h, value: arr[h], color: null });
+        changeList.push({ index: h, value: arr[h], color: null });
         h--;
       }
       arr[l] = arr[h];
       changeList.push({ index: l, value: arr[l], color: '#ec4899' });
-      //changeList.push({ index: l, value: arr[l], color: null });
+      changeList.push({ index: l, value: arr[l], color: null });
 
       while (tmp >= arr[l] && l < h) {
         changeList.push({ index: l, value: arr[l], color: '#ec4899' });
-        //changeList.push({ index: l, value: arr[l], color: null });
+        changeList.push({ index: l, value: arr[l], color: null });
         l++;
       }
       arr[h] = arr[l];
       changeList.push({ index: h, value: arr[h], color: '#6ee7b7' });
-      //changeList.push({ index: h, value: arr[h], color: null });
+      changeList.push({ index: h, value: arr[h], color: null });
     }
     arr[l] = tmp;
-    changeList.push({ index: l, value: arr[l], color: '#a78bfa' });
+    changeList.push({ index: l, value: arr[l], color: '#6ee7b7' });
+    changeList.push({ index: l, value: arr[l], color: null });
     partition(arr, low, l - 1);
     low = l + 1;
   }

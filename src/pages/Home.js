@@ -19,7 +19,11 @@ const Home = () => {
         </h1>
       </header>
       <section className='flex-grow mt-14 mb-8 mx-auto grid  grid-cols-1 lg:grid-cols-3 sm:grid-cols-2'>
-        <div className='font-mono cursor-pointer shadow-md hover:shadow-xl  rounded-3xl h-48 w-48 text-4xl text-center m-2 text-white bg-gradient-to-br from-blue-400 via-blue-500 to-blue-600 hover:from-blue-600'>
+        <div
+          className='font-mono cursor-pointer shadow-md rounded-3xl h-48 w-48 text-4xl text-center 
+                        m-2 text-white bg-gradient-to-br from-blue-400 via-blue-500 to-blue-600 
+                        hover:shadow-2xl hover:from-blue-500 transform hover:-translate-y-1 transition-all duration-150'
+        >
           <Link to='/bubblesort'>
             <img
               className='h-16 w-16 mx-auto mt-4'
@@ -31,7 +35,11 @@ const Home = () => {
           </Link>
         </div>
 
-        <div className='font-mono cursor-pointer shadow-md hover:shadow-xl rounded-3xl h-48 w-48 text-4xl text-center m-2 text-white bg-gradient-to-br from-green-400 via-green-500 to-green-600 hover:from-green-600'>
+        <div
+          className='font-mono cursor-pointer shadow-md hover:shadow-2xl rounded-3xl h-48 w-48 text-4xl text-center 
+                        m-2 text-white bg-gradient-to-br from-green-400 via-green-500 to-green-600 
+                        hover:from-green-500 transform hover:-translate-y-1 transition-all duration-150'
+        >
           <Link to='/selectionsort'>
             <img className='h-16 w-16 mx-auto mt-4' src={list} alt='list' />
             <p className='mt-3'>Select</p>
@@ -39,14 +47,22 @@ const Home = () => {
           </Link>
         </div>
 
-        <div className='font-mono cursor-pointer shadow-md hover:shadow-xl rounded-3xl h-48 w-48 text-4xl text-center m-2 text-white bg-gradient-to-br from-indigo-400 via-indigo-500 to-indigo-600 hover:from-indigo-600'>
+        <div
+          className='font-mono cursor-pointer shadow-md hover:shadow-2xl rounded-3xl h-48 w-48 text-4xl text-center 
+                        m-2 text-white bg-gradient-to-br from-indigo-400 via-indigo-500 to-indigo-600 
+                        hover:from-indigo-500 transform hover:-translate-y-1 transition-all duration-150'
+        >
           <Link to='insertionsort'>
             <img className='h-16 w-16 mx-auto mt-4' src={insert} alt='insert' />
             <p className='mt-3'>Insert</p>
             <p>Sort</p>
           </Link>
         </div>
-        <div className='font-mono cursor-pointer shadow-md hover:shadow-xl rounded-3xl h-48 w-48 text-4xl text-center m-2 text-white bg-gradient-to-br from-red-400 via-red-500 to-red-600 hover:from-red-600'>
+        <div
+          className='font-mono cursor-pointer shadow-md hover:shadow-2xl rounded-3xl h-48 w-48 text-4xl text-center 
+                        m-2 text-white bg-gradient-to-br from-red-400 via-red-500 to-red-600 
+                        hover:from-red-500 transform hover:-translate-y-1 transition-all duration-150'
+        >
           <Link to='heapsort'>
             <img
               className='h-16 w-16 mx-auto mt-4'
@@ -58,7 +74,11 @@ const Home = () => {
           </Link>
         </div>
 
-        <div className='font-mono cursor-pointer shadow-md hover:shadow-xl rounded-3xl h-48 w-48 text-4xl text-center m-2 text-white bg-gradient-to-br from-yellow-400 via-yellow-500 to-yellow-600 hover:from-yellow-600'>
+        <div
+          className='font-mono cursor-pointer shadow-md hover:shadow-2xl rounded-3xl h-48 w-48 text-4xl text-center 
+                        m-2 text-white bg-gradient-to-br from-yellow-400 via-yellow-500 to-yellow-600 
+                        hover:from-yellow-500 transform hover:-translate-y-1 transition-all duration-150'
+        >
           <Link to='quicksort'>
             <img
               className='h-16 w-16 mx-auto mt-4'
@@ -69,7 +89,11 @@ const Home = () => {
             <p>Sort</p>
           </Link>
         </div>
-        <div className='font-mono cursor-pointer shadow-md hover:shadow-xl rounded-3xl h-48 w-48 text-4xl text-center m-2 text-white bg-gradient-to-br from-purple-400 via-purple-500 to-purple-600 hover:from-purple-600'>
+        <div
+          className='font-mono cursor-pointer shadow-md hover:shadow-2xl rounded-3xl h-48 w-48 text-4xl text-center 
+                        m-2 text-white bg-gradient-to-br from-purple-400 via-purple-500 to-purple-600 
+                        hover:from-purple-500 transform hover:-translate-y-1 transition-all duration-150'
+        >
           <Link to='mergesort'>
             <img className='h-16 w-16 mx-auto mt-4' src={merge} alt='merge' />
             <p className='mt-3'>Merge</p>
