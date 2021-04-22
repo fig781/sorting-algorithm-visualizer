@@ -7,7 +7,7 @@ import connection from '../icons/connection.png';
 import fastTime from '../icons/fast-time.png';
 import insert from '../icons/insert.png';
 import list from '../icons/list.png';
-import merge from '../icons/merge.png';
+import shell from '../icons/shell.png';
 
 const Home = () => {
   return (
@@ -40,7 +40,7 @@ const Home = () => {
                         hover:from-purple-500 transform hover:-translate-y-1 transition-all duration-150'
         >
           <Link to='shellsort'>
-            <img className='h-16 w-16 mx-auto mt-4' src={merge} alt='shell' />
+            <img className='h-16 w-16 mx-auto mt-4' src={shell} alt='shell' />
             <p className='mt-3'>Shell</p>
             <p>Sort</p>
           </Link>
