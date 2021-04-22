@@ -34,7 +34,17 @@ const Home = () => {
             <p>Sort</p>
           </Link>
         </div>
-
+        <div
+          className='font-mono cursor-pointer shadow-md hover:shadow-2xl rounded-3xl h-48 w-48 text-4xl text-center 
+                        m-2 text-white bg-gradient-to-br from-purple-400 via-purple-500 to-purple-600 
+                        hover:from-purple-500 transform hover:-translate-y-1 transition-all duration-150'
+        >
+          <Link to='shellsort'>
+            <img className='h-16 w-16 mx-auto mt-4' src={merge} alt='shell' />
+            <p className='mt-3'>Shell</p>
+            <p>Sort</p>
+          </Link>
+        </div>
         <div
           className='font-mono cursor-pointer shadow-md hover:shadow-2xl rounded-3xl h-48 w-48 text-4xl text-center 
                         m-2 text-white bg-gradient-to-br from-green-400 via-green-500 to-green-600 
@@ -86,17 +96,6 @@ const Home = () => {
               alt='fastTime'
             />
             <p className='mt-3'>Quick</p>
-            <p>Sort</p>
-          </Link>
-        </div>
-        <div
-          className='font-mono cursor-pointer shadow-md hover:shadow-2xl rounded-3xl h-48 w-48 text-4xl text-center 
-                        m-2 text-white bg-gradient-to-br from-purple-400 via-purple-500 to-purple-600 
-                        hover:from-purple-500 transform hover:-translate-y-1 transition-all duration-150'
-        >
-          <Link to='mergesort'>
-            <img className='h-16 w-16 mx-auto mt-4' src={merge} alt='merge' />
-            <p className='mt-3'>Merge</p>
             <p>Sort</p>
           </Link>
         </div>

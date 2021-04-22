@@ -25,6 +25,11 @@ const Header = ({ bgColor = 'gray' }) => {
                 Bubble Sort
               </button>
             </Link>
+            <Link to='/shellsort'>
+              <button className='block text-left px-4 py-2 w-full text-gray-700 hover:bg-gray-200 hover:text-gray-900'>
+                Shell Sort
+              </button>
+            </Link>
             <Link to='/selectionsort'>
               <button className='block text-left px-4 py-2 w-full text-gray-700 hover:bg-gray-200 hover:text-gray-900'>
                 Selection Sort
@@ -43,11 +48,6 @@ const Header = ({ bgColor = 'gray' }) => {
             <Link to='/quicksort'>
               <button className='block text-left px-4 py-2 w-full text-gray-700 hover:bg-gray-200 hover:text-gray-900'>
                 Quick Sort
-              </button>
-            </Link>
-            <Link to='/mergesort'>
-              <button className='block text-left px-4 py-2 w-full text-gray-700 hover:bg-gray-200 hover:text-gray-900'>
-                Merge Sort
               </button>
             </Link>
           </div>

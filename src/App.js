@@ -5,7 +5,7 @@ import BubbleSort from './pages/BubbleSort';
 import SelectionSort from './pages/SelectionSort';
 import InsertionSort from './pages/InsertionSort';
 import QuickSort from './pages/QuickSort';
-import MergeSort from './pages/MergeSort';
+import ShellSort from './pages/ShellSort';
 import HeapSort from './pages/HeapSort';
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
         <Route path='/selectionsort' component={SelectionSort} />
         <Route path='/insertionsort' component={InsertionSort} />
         <Route path='/quicksort' component={QuickSort} />
-        <Route path='/mergesort' component={MergeSort} />
+        <Route path='/shellsort' component={ShellSort} />
         <Route path='/heapsort' component={HeapSort} />
       </Switch>
     </Router>
