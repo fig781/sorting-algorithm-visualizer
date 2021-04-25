@@ -1,24 +1,53 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Algo Visualizer",
+  "name": "Sorting Algorithm Visualizer",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "src": "pwaIcons/graph48.png",
+      "type": "image/png",
+      "sizes": "48x48"
     },
     {
-      "src": "logo192.png",
+      "src": "pwaIcons/graph72.png",
+      "type": "image/png",
+      "sizes": "72x72"
+    },
+    {
+      "src": "pwaIcons/graph96.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "pwaIcons/graph144.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    },
+    {
+      "src": "pwaIcons/graph168.png",
+      "type": "image/png",
+      "sizes": "168x168"
+    },
+    {
+      "src": "pwaIcons/graph192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo512.png",
+      "src": "pwaIcons/graph256.png",
+      "type": "image/png",
+      "sizes": "256x256"
+    },
+    {
+      "src": "pwaIcons/graph512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "gcm_sender_id": "",
+  "gcm_user_visible_only": true,
+  "start_url": "/?utm_source=homescreen",
+  "permissions": ["gcm"],
+  "orientation": "portrait",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"
