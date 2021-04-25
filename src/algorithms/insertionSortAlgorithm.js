@@ -1,6 +1,6 @@
 const insertionSortAlgorithm = (arr) => {
   let changeList = [];
-  let len = arr.length;
+  const len = arr.length;
   for (let i = 1; i < len; i++) {
     let current = arr[i];
     let j;
