@@ -1,6 +1,6 @@
 import { React, useState } from 'react';
 import { Link } from 'react-router-dom';
-//rafce
+
 const Header = ({ bgColor = 'gray' }) => {
   const [showList, setShowList] = useState(false);
 

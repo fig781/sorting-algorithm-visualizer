@@ -1,5 +1,5 @@
 import './App.css';
-import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
+import { Switch, Route, BrowserRouter } from 'react-router-dom';
 import Home from './pages/Home';
 import BubbleSort from './pages/BubbleSort';
 import SelectionSort from './pages/SelectionSort';
@@ -10,7 +10,8 @@ import HeapSort from './pages/HeapSort';
 
 function App() {
   return (
-    <Router>
+    //basename exists for gitHub pages since the build is stored in /sorting-algorithm-visualzer
+    <BrowserRouter basename='/sorting-algorithm-visualizer'>
       <Switch>
         <Route path='/' exact component={Home} />
         <Route path='/bubblesort' component={BubbleSort} />
@@ -20,7 +21,7 @@ function App() {
         <Route path='/shellsort' component={ShellSort} />
         <Route path='/heapsort' component={HeapSort} />
       </Switch>
-    </Router>
+    </BrowserRouter>
   );
 }
 
