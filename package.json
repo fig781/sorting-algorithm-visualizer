@@ -1,6 +1,6 @@
 {
   "name": "sorting-algorithm-visualizer",
-  "homepage": "https://aden-eilers.com/sorting-algorithm-visualizer/",
+  "homepage": "https://aden-eilers.com/sorting-algorithm-visualizer",
   "version": "1.0.0",
   "private": false,
   "dependencies": {
@@ -22,10 +22,10 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "test": "craco test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "craco build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
