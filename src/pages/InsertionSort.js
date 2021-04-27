@@ -11,10 +11,13 @@ const InsertionSort = () => {
 
   return (
     <>
-      <Header bgColor='indigo' />
+      <Header bgColor='bg-indigo-600' />
       <section className='m-4'>
         <h1 className='text-center text-5xl'>Insertion Sort</h1>
-        <Sorter sortingAlgorithm={insertionSortAlgorithm} btnColor='indigo' />
+        <Sorter
+          sortingAlgorithm={insertionSortAlgorithm}
+          btnColor='bg-indigo-600'
+        />
         <InfoSection
           algoInfo='Insertion sort is an algorithm that will iterate through an array creating a sorted list of values on the left side and an unsorted list on the right side. As it iterates through the unsorted array, it will carry values to the left side of the array into their correct sorted position.'
           bestTime='O(n)'

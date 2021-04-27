@@ -1,7 +1,7 @@
 import { React, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const Header = ({ bgColor = 'gray' }) => {
+const Header = ({ bgColor = 'bg-gray-600' }) => {
   const [showList, setShowList] = useState(false);
 
   const renderList = () => {
@@ -58,7 +58,7 @@ const Header = ({ bgColor = 'gray' }) => {
 
   return (
     <nav
-      className={`bg-${bgColor}-600 flex items-center h-16 justify-between sm:justify-start`}
+      className={`${bgColor} flex items-center h-16 justify-between sm:justify-start`}
     >
       <Link
         to='/'

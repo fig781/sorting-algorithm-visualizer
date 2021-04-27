@@ -130,7 +130,7 @@ const Sorter = ({ sortingAlgorithm, btnColor }) => {
       </div>
       <div className='flex flex-wrap justify-center space-x-2'>
         <button
-          className={`bg-${btnColor}-600 text-gray-200 rounded px-4 mb-2 py-1 focus:outline-none ${
+          className={`${btnColor} text-gray-200 rounded px-4 mb-2 py-1 focus:outline-none ${
             sorting ? 'bg-opacity-50' : 'hover:bg-gray-600'
           }`}
           onClick={onClickSort}
@@ -139,13 +139,13 @@ const Sorter = ({ sortingAlgorithm, btnColor }) => {
           Sort
         </button>
         <button
-          className={`bg-${btnColor}-600 text-gray-200 rounded px-4 mb-2 py-1 focus:outline-none hover:bg-gray-600`}
+          className={`${btnColor} text-gray-200 rounded px-4 mb-2 py-1 focus:outline-none hover:bg-gray-600`}
           onClick={onClickReset}
         >
           Reset
         </button>
         <button
-          className={`bg-${btnColor}-600 text-gray-200 rounded hover:bg-gray-600 px-4 mb-2 py-1 focus:outline-none`}
+          className={`${btnColor} text-gray-200 rounded hover:bg-gray-600 px-4 mb-2 py-1 focus:outline-none`}
           onClick={() => randomizeArray(arraySize)}
         >
           Randomize
