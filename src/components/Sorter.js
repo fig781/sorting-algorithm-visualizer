@@ -153,6 +153,7 @@ const Sorter = ({ sortingAlgorithm, btnColor }) => {
         <div className='flex items-center space-x-1 mb-2'>
           <p>Array Size: {arraySize}</p>
           <input
+            className='rounded-lg overflow-hidden appearance-none bg-gray-400 h-3 w-128'
             type='range'
             min={10}
             max={maxArraySize}
@@ -164,6 +165,7 @@ const Sorter = ({ sortingAlgorithm, btnColor }) => {
         <div className='flex items-center space-x-1 mb-2'>
           <p>Speed</p>
           <input
+            className='rounded-lg overflow-hidden appearance-none bg-gray-400 h-3 w-128'
             type='range'
             min={1}
             max={8}
