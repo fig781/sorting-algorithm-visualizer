@@ -130,7 +130,7 @@ const Sorter = ({ sortingAlgorithm, btnColor }) => {
       </div>
       <div className='flex flex-wrap justify-center space-x-2'>
         <button
-          className={`${btnColor} text-gray-200 rounded px-4 mb-2 py-1 focus:outline-none ${
+          className={`${btnColor} text-gray-100 rounded px-4 mb-2 py-1 focus:outline-none focus:${btnColor} ${
             sorting ? 'bg-opacity-50' : 'hover:bg-gray-600'
           }`}
           onClick={onClickSort}
@@ -139,13 +139,13 @@ const Sorter = ({ sortingAlgorithm, btnColor }) => {
           Sort
         </button>
         <button
-          className={`${btnColor} text-gray-200 rounded px-4 mb-2 py-1 focus:outline-none hover:bg-gray-600`}
+          className={`${btnColor} text-gray-100 rounded px-4 mb-2 py-1 focus:outline-none focus:${btnColor} hover:bg-gray-600`}
           onClick={onClickReset}
         >
           Reset
         </button>
         <button
-          className={`${btnColor} text-gray-200 rounded hover:bg-gray-600 px-4 mb-2 py-1 focus:outline-none`}
+          className={`${btnColor} text-gray-100 rounded hover:bg-gray-600 px-4 mb-2 py-1 focus:outline-none focus:${btnColor}`}
           onClick={() => randomizeArray(arraySize)}
         >
           Randomize
@@ -153,7 +153,8 @@ const Sorter = ({ sortingAlgorithm, btnColor }) => {
         <div className='flex items-center space-x-1 mb-2'>
           <p>Array Size: {arraySize}</p>
           <input
-            className='rounded-lg overflow-hidden appearance-none bg-gray-400 h-3 w-128'
+            className='rounded-lg overflow-hidden appearance-none h-3 w-128'
+            style={{ backgroundColor: '#b3b3cc' }}
             type='range'
             min={10}
             max={maxArraySize}
@@ -165,7 +166,8 @@ const Sorter = ({ sortingAlgorithm, btnColor }) => {
         <div className='flex items-center space-x-1 mb-2'>
           <p>Speed</p>
           <input
-            className='rounded-lg overflow-hidden appearance-none bg-gray-400 h-3 w-128'
+            className='rounded-lg overflow-hidden appearance-none h-3 w-128'
+            style={{ backgroundColor: '#b3b3cc' }}
             type='range'
             min={1}
             max={8}

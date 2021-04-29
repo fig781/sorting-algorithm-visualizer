@@ -5,8 +5,8 @@
     appearance: none;
     height: 15px;
     cursor: ew-resize;
-    background: rgb(255, 255, 255);
-    box-shadow: -405px 0 0 400px #52524e;
+    background: #fff;
+    box-shadow: -405px 0 0 400px #374151;
     border-radius: 50%;
   }
 }

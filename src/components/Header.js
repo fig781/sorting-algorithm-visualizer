@@ -9,7 +9,7 @@ const Header = ({ bgColor = 'bg-gray-600' }) => {
       return (
         <div
           className='origin-top-right absolute left-0 mt-1
-                    rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5'
+                    rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-10'
           onClick={() => {
             setShowList(!showList);
           }}
@@ -63,9 +63,9 @@ const Header = ({ bgColor = 'bg-gray-600' }) => {
       <Link
         to='/'
         className='ml-5 justify-start items-center inline-flex justify-center rounded-md 
-                    shadow-sm bg-gray-700 text-gray-200 px-4 py-1 focus:outline-none hover:bg-gray-800'
+                    shadow-sm bg-gray-700 text-gray-100 px-4 py-1  hover:bg-gray-800'
       >
-        <button>Home</button>
+        <button className='focus:outline-none'>Home</button>
       </Link>
       <div className='relative inline-block text-left mx-5'>
         <button
@@ -74,7 +74,7 @@ const Header = ({ bgColor = 'bg-gray-600' }) => {
           }}
           type='button'
           className='items-center inline-flex justify-center rounded-md 
-                    shadow-sm bg-gray-700 text-gray-200 px-4 py-1 focus:outline-none hover:bg-gray-800'
+                    shadow-sm bg-gray-700 text-gray-100 px-4 py-1 focus:outline-none focus:bg-gray-700 hover:bg-gray-800'
           id='options-menu'
           aria-haspopup='true'
           aria-expanded='true'
