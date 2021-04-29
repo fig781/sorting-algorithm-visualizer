@@ -131,7 +131,7 @@ const Sorter = ({ sortingAlgorithm, btnColor }) => {
       <div className='flex flex-wrap justify-center space-x-2'>
         <button
           className={`${btnColor} text-gray-100 rounded px-4 mb-2 py-1 focus:outline-none focus:${btnColor} ${
-            sorting ? 'bg-opacity-50' : 'hover:bg-gray-600'
+            sorting ? 'bg-opacity-50' : btnColor
           }`}
           onClick={onClickSort}
           disabled={sorting}
