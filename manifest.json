@@ -43,11 +43,8 @@
       "sizes": "512x512"
     }
   ],
-  "gcm_sender_id": "",
-  "gcm_user_visible_only": true,
-  "start_url": "/?utm_source=homescreen",
-  "permissions": ["gcm"],
-  "orientation": "portrait",
+
+  "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"
