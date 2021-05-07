@@ -11,10 +11,10 @@ const HeapSort = () => {
 
   return (
     <>
-      <Header bgColor='bg-red-600' />
+      <Header bgColor='red' />
       <main className='m-4'>
         <h1 className='text-center text-5xl'>Heap Sort</h1>
-        <Sorter sortingAlgorithm={heapSortAlgorithm} btnColor='bg-red-600' />
+        <Sorter sortingAlgorithm={heapSortAlgorithm} btnColor='red' />
         <InfoSection
           algoInfo='Heap sort can be thought of as an improved version of selection sort. Like selection sort, heap sort will split the array into sorted and unsorted sides. Instead of spending time on linear-time scan of the unsorted region, heap sort creates a heap data structure to store the largest and smallest values quickly.'
           bestTime='O(n log n)'

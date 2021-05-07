@@ -11,10 +11,10 @@ const BubbleSort = () => {
 
   return (
     <>
-      <Header bgColor='bg-blue-600' />
+      <Header bgColor='blue' />
       <main className='m-4'>
         <h1 className='text-center text-5xl'>Bubble Sort</h1>
-        <Sorter sortingAlgorithm={bubbleSortAlgorithm} btnColor='bg-blue-600' />
+        <Sorter sortingAlgorithm={bubbleSortAlgorithm} btnColor='blue' />
         <InfoSection
           algoInfo='Bubble sort is a simple sorting algorithm that iterates through an array and compares neighboring values. If the first value is higher then the second value, then it will swap their positions. Each pass of the array will put the largest unsorted value on the far right side of the array. '
           bestTime='O(n)'

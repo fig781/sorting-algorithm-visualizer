@@ -2,11 +2,9 @@ import { React } from 'react';
 import { Link } from 'react-router-dom';
 import HeaderNavButton from './HeaderNavButton';
 
-const Header = ({ bgColor = 'bg-gray-600' }) => {
+const Header = ({ bgColor = 'gray' }) => {
   return (
-    <nav
-      className={`${bgColor} flex items-center h-16 justify-between sm:justify-start`}
-    >
+    <nav className={`bg-${bgColor}-600 flex items-center h-16 justify-between sm:justify-start`}>
       <Link
         to='/'
         className='ml-5 justify-start items-center inline-flex justify-center rounded-md 

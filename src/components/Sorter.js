@@ -120,18 +120,13 @@ const Sorter = ({ sortingAlgorithm, btnColor }) => {
     <div className='mt-5'>
       <div className='flex items-end justify-center mb-3 h-80'>
         {sorterArray.map((i) => (
-          <Bar
-            key={i.index}
-            number={i.value}
-            itemsAmount={arraySize}
-            color={i.color}
-          />
+          <Bar key={i.index} number={i.value} itemsAmount={arraySize} color={i.color} />
         ))}
       </div>
       <div className='flex flex-wrap justify-center space-x-2'>
         <button
-          className={`${btnColor} text-gray-100 rounded px-4 mb-2 py-1 focus:outline-none focus:${btnColor} ${
-            sorting ? 'bg-opacity-50' : btnColor
+          className={`bg-${btnColor}-600 text-gray-100 rounded px-4 mb-2 py-1 focus:outline-none focus:bg-${btnColor}-600 disabled:opacity-50 ${
+            sorting ? 'hover:opacity-50' : `hover:bg-${btnColor}-700`
           }`}
           onClick={onClickSort}
           disabled={sorting}
@@ -139,13 +134,13 @@ const Sorter = ({ sortingAlgorithm, btnColor }) => {
           Sort
         </button>
         <button
-          className={`${btnColor} text-gray-100 rounded px-4 mb-2 py-1 focus:outline-none focus:${btnColor} hover:bg-gray-600`}
+          className={`bg-${btnColor}-600 text-gray-100 rounded px-4 mb-2 py-1 focus:outline-none hover:bg-${btnColor}-700 focus:bg-${btnColor}-600 `}
           onClick={onClickReset}
         >
           Reset
         </button>
         <button
-          className={`${btnColor} text-gray-100 rounded hover:bg-gray-600 px-4 mb-2 py-1 focus:outline-none focus:${btnColor}`}
+          className={`bg-${btnColor}-600 text-gray-100 rounded  px-4 mb-2 py-1 focus:outline-none hover:bg-${btnColor}-700 focus:bg-${btnColor}-600`}
           onClick={() => randomizeArray(arraySize)}
         >
           Randomize
